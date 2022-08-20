@@ -16,3 +16,8 @@ export class TileGridComponent implements OnInit {
   }
 
 }
+
+/*
+* Do I try to actually manipulate DOM elements with their values between positions
+* Or just update the values at those positions, and animate (review smashingconf css animate)
+*/
