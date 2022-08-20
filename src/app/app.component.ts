@@ -7,9 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  numbers: number[] = [];
-
   constructor() {
-    this.numbers = new Array<number>(15)
   }
 }

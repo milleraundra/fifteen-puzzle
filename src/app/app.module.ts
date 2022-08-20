@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TileComponent } from './tile/tile.component';
+import { TileGridComponent } from './tile-grid/tile-grid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TileComponent
+    TileComponent,
+    TileGridComponent
   ],
   imports: [
     BrowserModule,
