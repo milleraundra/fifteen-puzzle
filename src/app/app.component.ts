@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'fifteen-puzzle';
+
+  numbers: number[] = [];
+
+  constructor() {
+    this.numbers = new Array<number>(15)
+  }
 }
