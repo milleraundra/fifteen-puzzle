@@ -10,7 +10,7 @@ export class TileGridComponent implements OnInit {
   numbers: number[] = [];
 
   constructor() {
-    this.numbers = new Array<number>(15)
+    this.numbers = new Array<number>(15);
   }
   ngOnInit(): void {
   }
