@@ -1,6 +1,21 @@
 # FifteenPuzzle
+I grew up playing the Fifteen Puzzle that sat on my grandparent's desk. This will be a digital remake of that game.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+Goals:
+1. Game loads with pre-selected, standard solution. Tiles are shuffled.
+2. One or multiple tiles can be moved in one turn.
+3. Number of turns is totaled
+4. You are notified when you have solved the puzzle.
+
+Stretch Goals:
+1. Game can be 'won' through a variety of solutions. Allow users to choose a pattern to solve the puzzle
+2. Game looks and feels like the real-life game. Sounds, shadows, swiping/sliding, etc.
+3. Dark/Light mode
+4. Sound on/off
+5. User can add name and submit total turns to a leaderboard (by pattern?)
+6. PWA
+
+Figma: https://www.figma.com/file/222ryzVjLjPAGsIeTDeMGN/Fifteen-Puzzle?node-id=0%3A1
 
 ## Development server
 
