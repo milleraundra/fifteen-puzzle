@@ -1,6 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {fromEvent, Subscription} from "rxjs";
 import {DOCUMENT} from "@angular/common";
+import {primarySolution} from "../solutions";
 
 @Component({
   selector: 'app-tile-grid',
@@ -9,12 +10,20 @@ import {DOCUMENT} from "@angular/common";
 })
 export class TileGridComponent implements OnInit {
 
-  numbers: number[] = [];
+  numbers: number[];
+  startingPositions: any;
   mousemovement: Subscription = new Subscription();
 
   constructor(@Inject(DOCUMENT) private document: Document) {
-    this.numbers = new Array<number>(15);
+    this.numbers = Object.values(primarySolution);
+
+    this.startingPositions = this.numbers
+      .map(value => ({ value, sort: Math.random() }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ value }) => value * 10);
+    console.log(this.startingPositions);
   }
+
   ngOnInit(): void {
   }
 

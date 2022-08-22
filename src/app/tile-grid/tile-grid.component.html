@@ -1,6 +1,7 @@
 <div id="tile-grid" (mouseenter)="mousein()" (mouseleave)="mouseout()">
   <app-tile
-    *ngFor="let num of numbers; let i = index"
-    [value]="i + 1"></app-tile>
+    *ngFor="let num of startingPositions; let i = index"
+    [(left)]="startingPositions[i]"
+    [value]="num"></app-tile>
 </div>
 

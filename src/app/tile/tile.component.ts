@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-tile',
@@ -8,6 +8,10 @@ import {Component, Input, OnInit} from '@angular/core';
 export class TileComponent implements OnInit {
 
   @Input() value: number | null = null;
+  @Input() top: number = 0;
+  @Output() topChange = new EventEmitter<number>();
+  @Input() left: number = 0;
+  @Output() leftChange = new EventEmitter<number>();
 
   constructor() { }
 

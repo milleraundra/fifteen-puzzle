@@ -1,6 +1,6 @@
 /* position[key]: value */
 
-const primary = {
+export const primarySolution: Object = {
   1: 1,
   2: 2,
   3: 3,
@@ -18,7 +18,7 @@ const primary = {
   15: 15
 }
 
-const reverse = {
+export const reverseSolution = {
   1: 15,
   2: 14,
   3: 13,
