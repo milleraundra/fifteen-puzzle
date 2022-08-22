@@ -1,4 +1,4 @@
-<div id="tile-grid">
+<div id="tile-grid" (mouseenter)="mousein()" (mouseleave)="mouseout()">
   <app-tile
     *ngFor="let num of numbers; let i = index"
     [value]="i + 1"></app-tile>

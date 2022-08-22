@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import {fromEvent, Subscription} from "rxjs";
+import {DOCUMENT} from "@angular/common";
 
 @Component({
   selector: 'app-tile-grid',
@@ -8,16 +10,33 @@ import { Component, OnInit } from '@angular/core';
 export class TileGridComponent implements OnInit {
 
   numbers: number[] = [];
+  mousemovement: Subscription = new Subscription();
 
-  constructor() {
+  constructor(@Inject(DOCUMENT) private document: Document) {
     this.numbers = new Array<number>(15);
   }
   ngOnInit(): void {
   }
 
-}
+  mousein() {
+    this.mousemovement = fromEvent(this.document, 'mousemove').subscribe(
+      next => this.mousemove(next),
+      error => this.error(error),
+      () => {}
+    )
+  }
 
-/*
-* Do I try to actually manipulate DOM elements with their values between positions
-* Or just update the values at those positions, and animate (review smashingconf css animate)
-*/
+  mousemove(event: Event) {
+    console.log('mousemove called', event);
+  }
+
+  mouseout() {
+    console.log('mouseout');
+    this.mousemovement.unsubscribe();
+  }
+
+  error(event: Event) {
+    console.warn('mouse movement events have errored: ', event);
+  }
+
+}
