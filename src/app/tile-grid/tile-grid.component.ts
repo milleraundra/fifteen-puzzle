@@ -20,14 +20,14 @@ export class TileGridComponent implements OnInit {
 
   mousein() {
     this.mousemovement = fromEvent(this.document, 'mousemove').subscribe(
-      next => this.mousemove(next),
+      next => this.mousemove(next as MouseEvent),
       error => this.error(error),
       () => {}
     )
   }
 
-  mousemove(event: Event) {
-    console.log('mousemove called', event);
+  mousemove(event: MouseEvent) {
+    console.log('mousemove called', event.x, event.y);
   }
 
   mouseout() {
